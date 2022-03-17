@@ -1,5 +1,9 @@
+#pragma once
+
+#ifndef INIT
 
 #include<ui_engine.h>
+#include<Windows.h>
 using namespace std;
 
 struct Button{
@@ -11,12 +15,11 @@ struct Button{
 };
 
 // 界面初始化宏
-#define INTERFACE \
+#define INIT \
     system("CLS");\
-    HideCursor();/**/\
+    HideCursor();\
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);\
 	CONSOLE_CURSOR_INFO cursor;\
-	/**/
 	SetConsoleCursorInfo(handle, &cursor);\
 	CONSOLE_FONT_INFOEX ConsoleCurrentFontEx = { 0 };\
 	ConsoleCurrentFontEx.cbSize = sizeof(ConsoleCurrentFontEx);\
@@ -29,13 +32,13 @@ struct Button{
 	cursor.bVisible = FALSE;\
 	cursor.dwSize = sizeof(cursor);\
 	SetConsoleCursorInfo(handle, &cursor);\
-
 	COORD size = { 80,25 };\
 	if (!SetConsoleScreenBufferSize(handle, size)) {\
 		cout << "failed" << endl;\
 	}\
-
 	SMALL_RECT r = { 0,0,75,22 };\
 	if (!SetConsoleWindowInfo(handle, true, &r)) {\
-		cout << "windows failed !" \
+		cout << "windows failed !";\
     }
+
+#endif

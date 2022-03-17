@@ -5,8 +5,8 @@
 
 #include <ui_engine.h>
 
-#define TEST 1
+void Welcome();
 
-void test();
+
 
 #endif

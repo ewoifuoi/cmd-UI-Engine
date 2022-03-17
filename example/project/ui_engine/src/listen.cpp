@@ -60,7 +60,6 @@ DWORD WINAPI ThreadListen(LPVOID pM) {
         // if(Key[4]) {
         //     cout << "您正在按 → 键" << endl;
         // }
-        memset(Key, 0, sizeof(Key));
     }
     
     return 0;

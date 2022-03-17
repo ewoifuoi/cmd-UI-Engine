@@ -4,14 +4,13 @@
 
 using namespace std;
 
+extern int Key[21];
 
 int main() {
     
-    LOOP(
+    LOOP(100,
         print("笑嘻了");
-        cout << TEST << endl;
-        test();
-        Sleep(1000);
+        if(UP) Welcome(); 
     )
     
     return 0;

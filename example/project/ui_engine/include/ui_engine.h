@@ -10,6 +10,7 @@
 
 // 内部库
 #include<loop.h>
+#include<interaction.h>
 
 
 using namespace std;
