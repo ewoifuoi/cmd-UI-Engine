@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     
-    USING_ENGINE(
+    LISTEN(
         print("笑嘻了");
         Sleep(1000);
     )

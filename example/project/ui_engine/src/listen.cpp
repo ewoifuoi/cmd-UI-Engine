@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include "ui_engine.h"
+#include <ui_engine.h>
 
 using namespace std;
 
@@ -43,21 +43,21 @@ void kb_get() {
 }
 
 DWORD WINAPI ThreadFun(LPVOID pM) {
-    printf("\n\n\n\t -- > 启动键盘监听线程 < --  \n\n\nID号为： : %d\n");
+    // printf("\n\n\n\t -- > 启动键盘监听线程 < --  \n\n\nID号为： : %d\n");
     while(1) {
         kb_get();
-        if(Key[1]) {
-            cout << "您正在按 ↑ 键" << endl;
-        }
-        if(Key[2]) {
-            cout << "您正在按 ↓ 键" << endl;
-        }
-        if(Key[3]) {
-            cout << "您正在按 ← 键" << endl;
-        }
-        if(Key[4]) {
-            cout << "您正在按 → 键" << endl;
-        }
+        // if(Key[1]) {
+        //     cout << "您正在按 ↑ 键" << endl;
+        // }
+        // if(Key[2]) {
+        //     cout << "您正在按 ↓ 键" << endl;
+        // }
+        // if(Key[3]) {
+        //     cout << "您正在按 ← 键" << endl;
+        // }
+        // if(Key[4]) {
+        //     cout << "您正在按 → 键" << endl;
+        // }
         memset(Key, 0, sizeof(Key));
     }
     

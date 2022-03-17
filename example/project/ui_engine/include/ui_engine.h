@@ -9,9 +9,10 @@
 #include<conio.h>
 
 
-#define USING_ENGINE(TEXT) HANDLE handle = CreateThread(NULL, 0, ThreadFun, NULL,0,  NULL);\
-while(1){TEXT}\
-WaitForSingleObject(handle, INFINITE);  
+#include<listen.h>
+
+
+
 
 using namespace std;
 
