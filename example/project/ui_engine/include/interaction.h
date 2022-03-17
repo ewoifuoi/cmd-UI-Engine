@@ -32,11 +32,11 @@ struct Button{
 	cursor.bVisible = FALSE;\
 	cursor.dwSize = sizeof(cursor);\
 	SetConsoleCursorInfo(handle, &cursor);\
-	COORD size = { 80,25 };\
+	COORD size = { 200,200 };\
 	if (!SetConsoleScreenBufferSize(handle, size)) {\
 		cout << "failed" << endl;\
 	}\
-	SMALL_RECT r = { 0,0,75,22 };\
+	SMALL_RECT r = { 0,0,60,20 };\
 	if (!SetConsoleWindowInfo(handle, true, &r)) {\
 		cout << "windows failed !";\
     }

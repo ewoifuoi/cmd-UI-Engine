@@ -4,6 +4,8 @@ using namespace std;
 
 void Welcome() {
     INIT
-    while(1){}
+    LOOP(200,
+        
+    )
     return;
 }

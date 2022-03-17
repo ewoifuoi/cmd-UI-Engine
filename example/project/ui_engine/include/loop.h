@@ -11,12 +11,12 @@ extern int Key[21];
 
 // 启用键盘监听进程, 在监听循环中通过 Key数组判断对应按键是否被触发
 #define LOOP(DELAY, TEXT) \
-    HANDLE handle = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
+    HANDLE handle2 = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
     while(1){\
         TEXT\
         memset(Key, 0, sizeof(Key));\
         Sleep(DELAY);\
     }\
-    WaitForSingleObject(handle, INFINITE);  
+    WaitForSingleObject(handle2, INFINITE);  
 
 #endif

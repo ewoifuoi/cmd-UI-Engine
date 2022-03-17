@@ -18,6 +18,7 @@ using namespace std;
 
 // 基础 API
 void print(string s);
+void powerprint(string word, short x, short y, int color, int val);
 
 
 // 内部 API
