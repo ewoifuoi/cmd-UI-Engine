@@ -3,23 +3,28 @@
 #ifndef UI_ENGINE
 #define UI_ENGINE
 
+//系统库
 #include<bits/stdc++.h>
-
 #include<Windows.h>
 #include<conio.h>
 
-
-#include<listen.h>
-
-
+// 内部库
+#include<loop.h>
 
 
 using namespace std;
 
 
-
+// 基础 API
 void print(string s);
-void kb_get();
-DWORD WINAPI ThreadFun(LPVOID pM);
+
+
+// 内部 API
+void kb_get();// 键盘捕获
+DWORD WINAPI ThreadListen(LPVOID pM);// 创建监听线程
+void goto_xy(short x, short y);// 光标移动
+void show_cursor();// 显示光标`
+void HideCursor();// 隐藏光标
+void set_console_color(unsigned short color_index);// 改变终端颜色
 
 #endif

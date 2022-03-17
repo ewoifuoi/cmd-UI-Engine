@@ -1,4 +1,6 @@
 
+// 此文件 内为 键盘事件 监听函数
+
 #include <ui_engine.h>
 
 using namespace std;
@@ -42,7 +44,7 @@ void kb_get() {
     return ;
 }
 
-DWORD WINAPI ThreadFun(LPVOID pM) {
+DWORD WINAPI ThreadListen(LPVOID pM) {
     // printf("\n\n\n\t -- > 启动键盘监听线程 < --  \n\n\nID号为： : %d\n");
     while(1) {
         kb_get();

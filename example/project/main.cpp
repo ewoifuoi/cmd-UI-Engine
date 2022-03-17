@@ -1,13 +1,16 @@
 
 #include <ui_engine.h>
+#include <interFace.h>
 
 using namespace std;
 
 
 int main() {
     
-    LISTEN(
+    LOOP(
         print("笑嘻了");
+        cout << TEST << endl;
+        test();
         Sleep(1000);
     )
     
