@@ -8,10 +8,7 @@ extern int Key[21];
 
 int main() {
     
-    LOOP(100,
-        print("笑嘻了");
-        if(UP) Welcome(); 
-    )
+    Welcome(); 
     
     return 0;
 }

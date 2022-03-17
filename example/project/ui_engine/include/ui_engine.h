@@ -10,15 +10,17 @@
 
 // 内部库
 #include<loop.h>
-#include<interaction.h>
+#include<render.h>
+#include<assemble.h>
 
 
 using namespace std;
 
 
 // 基础 API
-void print(string s);
-void powerprint(string word, short x, short y, int color, int val);
+void print(string s);// 测试函数
+void powerprint(string word, short x, short y, int color, int val);// 通用绘制函数
+void make_boundary(int x, int y, int type);// 绘制边界
 
 
 // 内部 API
