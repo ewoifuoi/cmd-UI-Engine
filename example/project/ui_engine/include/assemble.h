@@ -32,7 +32,7 @@ private:
     string text;
     pair<int, int> loc;
     int color;
-    int on_color = yellow_l + blue * 16;// 被选中后颜色
+    int on_color;// 被选中后颜色
     int if_on = 0;
     int id;
 public:

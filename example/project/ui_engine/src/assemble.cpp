@@ -27,6 +27,8 @@ void Label::removeTo(int x, int y) {// 改变位置并输出
 Button::Button(string Tex, int x, int y) {
     text = Tex;
     loc.first = x; loc.second = y;
+    color = white;
+    on_color = yellow_l + blue * 16;
 }
 
 void Button::show() {
