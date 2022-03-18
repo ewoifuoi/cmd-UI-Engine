@@ -7,6 +7,7 @@
 
 void Welcome();
 void Game();
+void Rank();
 
 
 

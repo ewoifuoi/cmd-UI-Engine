@@ -72,11 +72,14 @@ extern string char_list[20001];
 	if (!SetConsoleScreenBufferSize(handle, size)) {\
 		cout << "failed" << endl;\
 	}\
-	SMALL_RECT r = { 0,0,82,22 };\
+	SMALL_RECT r = { 0,0,82,25 };\
 	if (!SetConsoleWindowInfo(handle, true, &r)) {\
 		cout << "windows failed !";\
     }\
 	int pointer = 0;\
+	vector<Button*> temp;\
+
+#define QUICK_SCENE
 
 
 

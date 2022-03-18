@@ -3,6 +3,10 @@
 #ifndef LISTEN_BUTTON
 
 #define LISTEN_BUTTON(...) vector<Button* > list = {__VA_ARGS__};\
+for(int i = 0; i < temp.size(); i++) {\
+    list.push_back(temp[i]);\
+}\
+temp.clear();\
 if(!list.empty()) {\
     int list_cnt = list.size();\
     if(Key[1] || Key[3]) {list[pointer]->release();pointer += list_cnt; pointer--; pointer %= list_cnt;}\
