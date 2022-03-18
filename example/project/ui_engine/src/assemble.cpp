@@ -39,6 +39,17 @@ Button::Button(string Tex, int x, int y, void(*func)()) {
     Func = func;
 }
 
+Button::Button(string Tex, int x, int y, int xxl) {
+    if(xxl == BACK) {
+        Func = [](){Back();};
+        if_back = 1;
+    }
+    text = Tex;
+    loc.first = x; loc.second = y;
+    color = white;
+    on_color = yellow_l + blue * 16;
+}
+
 void Button::show() {
     if(if_on) {
         powerprint(text, loc.first, loc.second, on_color, -1);
@@ -51,10 +62,12 @@ void Button::show() {
 
 void Button::click() {
     if_on = 1;
+    if(if_back) {signal_will_stop = 1;}// 返回按钮回调优化 (当光标选中"返回"按钮时激活, 用于被触发时在快速停止监听线程)
 }
 
 void Button::release() {
     if_on = 0;
+    if(if_back) {signal_will_stop = 0;}// 预告信号 重置
 }
 
 int Button::onClick() {

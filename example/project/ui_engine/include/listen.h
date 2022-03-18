@@ -20,7 +20,6 @@
 for(int i = 0; i < temp.size(); i++) {\
     list.push_back(temp[i]);\
 }\
-temp.clear();\
 if(!list.empty()) {\
     int list_cnt = list.size();\
     if(UP || LEFT) {list[pointer]->release();pointer += list_cnt; pointer--; pointer %= list_cnt;}\
@@ -31,6 +30,7 @@ if(!list.empty()) {\
         list[i]->show();\
     }\
     if(ENTER) {\
+        memset(Key, 0, sizeof(Key));\
         if(list[pointer]->Func != NULL) {list[pointer]->Func();}\
         goto reload;\
     }\

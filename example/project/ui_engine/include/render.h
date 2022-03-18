@@ -75,10 +75,12 @@ extern string char_list[20001];
 	if (!SetConsoleWindowInfo(handle, true, &r)) {\
 		cout << "windows failed !";\
     }\
+	vector<Button*> temp;\
 	reload:\
+	temp.clear();\
     system("CLS");\
 	int pointer = 0;\
-	vector<Button*> temp;\
+	
 	
 
 #define QUICK_SCENE

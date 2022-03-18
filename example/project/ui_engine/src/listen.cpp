@@ -9,6 +9,7 @@ int Key[21];
 int Signal_change = 0;
 int loop_cnt=0;
 int thread_shutDown = 0;
+int signal_will_stop = 0;
 
 void kb_get() {
     if(_kbhit()) {
@@ -54,7 +55,13 @@ void kb_get() {
 DWORD WINAPI ThreadListen(LPVOID pM) {
     // printf("\n\n\n\t -- > 启动键盘监听线程 < --  \n\n\nID号为： : %d\n");
     while(1) {
+        if(back) {
+            return 0;
+        }
         kb_get();
+        if(signal_will_stop) {
+            if(ENTER == 1) {signal_will_stop = 0;return 0;}
+        }
         if(thread_shutDown) {
             thread_shutDown = 0;
             return 0;

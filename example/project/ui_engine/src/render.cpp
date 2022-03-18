@@ -9,6 +9,7 @@ string char_list[20001] = {"□","■", "┏", "┓", "┗", "┛", "┃", "━"
 int back = 0;
 
 
+
 void powerprint(string word, short x, short y, int color, int val) {
     goto_xy(x, y);
     set_console_color(color);
