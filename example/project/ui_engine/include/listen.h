@@ -31,7 +31,8 @@ if(!list.empty()) {\
         list[i]->show();\
     }\
     if(ENTER) {\
-        if(list[pointer]->Func != NULL) {list[pointer]->Func();exit(0);}\
+        if(list[pointer]->Func != NULL) {list[pointer]->Func();}\
+        goto reload;\
     }\
 }\
 

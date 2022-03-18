@@ -8,6 +8,7 @@ using namespace std;
 int Key[21];
 int Signal_change = 0;
 int loop_cnt=0;
+int thread_shutDown = 0;
 
 void kb_get() {
     if(_kbhit()) {
@@ -54,6 +55,10 @@ DWORD WINAPI ThreadListen(LPVOID pM) {
     // printf("\n\n\n\t -- > 启动键盘监听线程 < --  \n\n\nID号为： : %d\n");
     while(1) {
         kb_get();
+        if(thread_shutDown) {
+            thread_shutDown = 0;
+            return 0;
+        }
         // if(Key[1]) {
         //     powerprint("您正在按 ↑ 键",25, 3, aqua_l, -1);
         // }
@@ -70,3 +75,4 @@ DWORD WINAPI ThreadListen(LPVOID pM) {
     
     return 0;
 }
+

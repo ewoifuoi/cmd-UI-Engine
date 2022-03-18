@@ -10,10 +10,21 @@ void Game() {
         exit(0);
     });
     btn_back->show();temp.push_back(btn_back);
+    auto text = new Button("text", 50, 5, [](){
+        Back();
+        
+        return ;
+    });
+    auto text2 = new Button("text2", 50, 8, [](){
+        exit(0);
+    });
+    text->show();text2->show();
 
     LOOP(
-        LISTEN_BUTTON()
+        LISTEN_BUTTON(text, text2)
         powerprint("Game", 25, 5, aqua, -1);
+        
     )
+    
     return;
 }

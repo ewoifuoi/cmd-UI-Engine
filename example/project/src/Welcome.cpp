@@ -16,11 +16,12 @@ void Welcome() {
     auto btn3 = new Button("退出游戏", 26, 18, [](){
         exit(0);
     });
-    
+
     title->show();btn1->show();btn2->show();btn3->show();
     LOOP(
         LISTEN_BUTTON(btn1, btn2, btn3)
         title->randColorShow(500);
     )
+
     return;
 }

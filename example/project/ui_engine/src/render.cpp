@@ -6,6 +6,7 @@ using namespace std;
 
 
 string char_list[20001] = {"□","■", "┏", "┓", "┗", "┛", "┃", "━"};
+int back = 0;
 
 
 void powerprint(string word, short x, short y, int color, int val) {
@@ -41,4 +42,12 @@ void make_boundary(int x, int y, int type){// 绘制一个从 (0, 0) 到 (x - 1,
     
     return;
 
+}
+
+void Back() {
+    if(back == 0) {
+        back = 1;
+        thread_shutDown = 1;
+    }
+    return;
 }

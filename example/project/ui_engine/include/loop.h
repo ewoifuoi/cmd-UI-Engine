@@ -33,12 +33,15 @@ extern int Key[21];
 #define LOOP(TEXT) HANDLE handle2 = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
     loop_cnt = 0;\
     while(1){\
+        if(back) {\
+            back = 0;\
+            goto end;\
+        }\
         loop_cnt++;\
         loop_cnt %= 10000019;\
         TEXT\
     }\
-    WaitForSingleObject(handle2, INFINITE);\
-
+    end:\
 
 
 #endif

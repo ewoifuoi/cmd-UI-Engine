@@ -58,7 +58,6 @@ extern string char_list[20001];
 
 
 #define INIT_NORMAL \
-    system("CLS");\
     HideCursor();\
     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);\
 	CONSOLE_CURSOR_INFO cursor;\
@@ -76,8 +75,11 @@ extern string char_list[20001];
 	if (!SetConsoleWindowInfo(handle, true, &r)) {\
 		cout << "windows failed !";\
     }\
+	reload:\
+    system("CLS");\
 	int pointer = 0;\
 	vector<Button*> temp;\
+	
 
 #define QUICK_SCENE
 
