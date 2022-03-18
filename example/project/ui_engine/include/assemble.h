@@ -44,7 +44,7 @@ public:
     void click();
     void release();
     void show();
-    void(*Func)();
+    void(*Func)() = NULL;
 
 };
 
