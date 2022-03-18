@@ -4,6 +4,7 @@
 
 extern int Key[21];
 
+#define ENTER   Key[0]
 #define UP      Key[1]
 #define DOWN    Key[2]
 #define LEFT    Key[3]

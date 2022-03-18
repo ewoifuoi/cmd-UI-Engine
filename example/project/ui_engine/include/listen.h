@@ -12,6 +12,10 @@ if(!list.empty()) {\
     for(int i = 0; i < list_cnt; i++) {\
         list[i]->show();\
     }\
+    if(ENTER) {\
+        list[pointer]->Func();\
+        exit(0);\
+    }\
 }\
 
 
