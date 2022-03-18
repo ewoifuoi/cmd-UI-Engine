@@ -31,6 +31,14 @@ Button::Button(string Tex, int x, int y) {
     on_color = yellow_l + blue * 16;
 }
 
+Button::Button(string Tex, int x, int y, void(*func)()) {
+    text = Tex;
+    loc.first = x; loc.second = y;
+    color = white;
+    on_color = yellow_l + blue * 16;
+    Func = func;
+}
+
 void Button::show() {
     if(if_on) {
         powerprint(text, loc.first, loc.second, on_color, -1);

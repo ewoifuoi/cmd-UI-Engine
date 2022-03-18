@@ -6,6 +6,7 @@
 #include <ui_engine.h>
 
 void Welcome();
+void Game();
 
 
 

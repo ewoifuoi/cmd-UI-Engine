@@ -35,13 +35,16 @@ private:
     int on_color;// 被选中后颜色
     int if_on = 0;
     int id;
+    
 public:
     Button(string Tex, int x, int y);
+    Button(string Tex, int x, int y, void(*func)());
     void setColor(int front, int back);
     int onClick();
     void click();
     void release();
     void show();
+    void(*Func)();
 
 };
 

@@ -13,7 +13,7 @@ void kb_get() {
     if(_kbhit()) {
         Signal_change = 1;
         char in_put = getch();
-        if(int(in_put) == 13) {
+        if(int(in_put) == 13) {// 回车
             memset(Key, 0 ,sizeof(Key));
             Key[0] = 1;
             return ;
