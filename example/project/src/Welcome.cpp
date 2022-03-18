@@ -1,7 +1,8 @@
 #include<ui_engine.h>
 #include<interFace.h>
-
 using namespace std;
+
+
 
 void Welcome() {
 
@@ -12,9 +13,13 @@ void Welcome() {
         Game();
     });
     auto btn2 = new Button("排行榜", 27, 15);
-    title->show();btn1->show();btn2->show();
+    auto btn3 = new Button("退出游戏", 26, 18, [](){
+        exit(0);
+    });
+    
+    title->show();btn1->show();btn2->show();btn3->show();
     LOOP(
-        LISTEN_BUTTON(btn1, btn2)
+        LISTEN_BUTTON(btn1, btn2, btn3)
         title->randColorShow(500);
     )
     return;
