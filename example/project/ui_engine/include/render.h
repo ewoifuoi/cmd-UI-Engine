@@ -6,6 +6,8 @@
 using namespace std;
 
 extern string char_list[20001];
+#define LINE 1
+#define SQUARE 0
 
 
 #define black       0
@@ -47,6 +49,27 @@ struct Button{
 	ConsoleCurrentFontEx.dwFontSize.Y = 24;\
 	ConsoleCurrentFontEx.FontFamily = TMPF_VECTOR;\
 	ConsoleCurrentFontEx.FontWeight = 50;\
+	SetCurrentConsoleFontEx(handle, FALSE, &ConsoleCurrentFontEx);\
+	cursor.bVisible = FALSE;\
+	cursor.dwSize = sizeof(cursor);\
+	SetConsoleCursorInfo(handle, &cursor);\
+	COORD size = { 125,30};\
+	if (!SetConsoleScreenBufferSize(handle, size)) {\
+		cout << "failed" << endl;\
+	}\
+	SMALL_RECT r = { 0,0,82,22 };\
+	if (!SetConsoleWindowInfo(handle, true, &r)) {\
+		cout << "windows failed !";\
+    }
+
+
+#define INIT_NORMAL \
+    system("CLS");\
+    HideCursor();\
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);\
+	CONSOLE_CURSOR_INFO cursor;\
+	SetConsoleCursorInfo(handle, &cursor);\
+	CONSOLE_FONT_INFOEX ConsoleCurrentFontEx = { 0 };\
 	SetCurrentConsoleFontEx(handle, FALSE, &ConsoleCurrentFontEx);\
 	cursor.bVisible = FALSE;\
 	cursor.dwSize = sizeof(cursor);\

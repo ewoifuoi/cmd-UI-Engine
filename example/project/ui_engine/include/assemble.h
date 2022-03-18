@@ -3,6 +3,17 @@
 #ifndef ASS
 #define ASS
 
+
+class Assemble{
+protected:
+    string text;
+    pair<int, int> loc;
+    int color;
+
+public:
+    void show();
+};
+
 class Label{
 private:
     string text;
