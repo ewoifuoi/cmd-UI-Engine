@@ -27,13 +27,7 @@ extern string char_list[20001];
 #define yellow_l    14
 #define white_b     15
 
-struct Button{
-    string word;
-    int x; int y;
-    int color;
-    int val;
-    void (*func)();
-};
+
 
 // 界面初始化宏
 #define INIT \
@@ -81,7 +75,8 @@ struct Button{
 	SMALL_RECT r = { 0,0,82,22 };\
 	if (!SetConsoleWindowInfo(handle, true, &r)) {\
 		cout << "windows failed !";\
-    }
+    }\
+	int pointer = 0;\
 
 
 
