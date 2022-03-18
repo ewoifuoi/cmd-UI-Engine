@@ -10,13 +10,15 @@ extern int Key[21];
 #define RIGHT   Key[4]
 
 // 启用键盘监听进程, 在监听循环中通过 Key数组判断对应按键是否被触发
-#define LOOP(DELAY, TEXT) \
-    HANDLE handle2 = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
+#define LOOP(TEXT) HANDLE handle2 = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
+    loop_cnt = 0;\
     while(1){\
+        loop_cnt++;\
+        loop_cnt %= 10000019;\
         TEXT\
-        memset(Key, 0, sizeof(Key));\
-        Sleep(DELAY);\
     }\
-    WaitForSingleObject(handle2, INFINITE);  
+    WaitForSingleObject(handle2, INFINITE);\
+
+
 
 #endif

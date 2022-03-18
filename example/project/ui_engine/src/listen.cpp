@@ -6,9 +6,12 @@
 using namespace std;
 
 int Key[21];
+int Signal_change = 0;
+int loop_cnt=0;
 
 void kb_get() {
     if(_kbhit()) {
+        Signal_change = 1;
         char in_put = getch();
         if(int(in_put) == 13) {
             memset(Key, 0 ,sizeof(Key));
@@ -41,6 +44,9 @@ void kb_get() {
         }
         
     }
+    else {
+        Signal_change = 0;
+    }
     return ;
 }
 
@@ -49,7 +55,7 @@ DWORD WINAPI ThreadListen(LPVOID pM) {
     while(1) {
         kb_get();
         // if(Key[1]) {
-        //     cout << "您正在按 ↑ 键" << endl;
+        //     powerprint("您正在按 ↑ 键",25, 3, aqua_l, -1);
         // }
         // if(Key[2]) {
         //     cout << "您正在按 ↓ 键" << endl;

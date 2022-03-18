@@ -12,9 +12,13 @@
 #include<loop.h>
 #include<render.h>
 #include<assemble.h>
+#include<listen.h>
 
 
 using namespace std;
+
+extern int Signal_change;
+extern int loop_cnt;
 
 
 // 基础 API
