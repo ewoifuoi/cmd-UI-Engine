@@ -42,6 +42,7 @@ extern int Key[21];
         TEXT\
     }\
     end:\
+    CloseHandle(handle2);\
 
 
 #endif
