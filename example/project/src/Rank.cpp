@@ -5,11 +5,11 @@ using namespace std;
 void Rank() {
 
     INIT_NORMAL
-    make_boundary(59,22,LINE);
-    
-    LOOP(
-        // LISTEN_BUTTON()
-        powerprint("Game", 25, 5, aqua, -1);
+    SCENE(
+        auto title = new Label("排行榜", 27, 3);
+        LOOP(
+            LISTEN_BUTTON()
+        )
     )
     return;
 }
