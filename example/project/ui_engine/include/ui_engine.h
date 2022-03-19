@@ -13,6 +13,7 @@
 #include<render.h>
 #include<assemble.h>
 #include<listen.h>
+#include<Scene.h>
 
 #define BACK 1
 
