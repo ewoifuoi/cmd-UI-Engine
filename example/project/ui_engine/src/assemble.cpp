@@ -7,6 +7,7 @@ using namespace std;
 
 Label::Label(string Tex, int x, int y) {
     text = Tex; loc.first = x; loc.second = y; color = white;
+    this->show();
 }
 void Label::randColorShow(int p) {// 随机颜色 (霓虹灯效果)
     if(loop_cnt % p == 0) {
@@ -29,6 +30,7 @@ Button::Button(string Tex, int x, int y) {
     loc.first = x; loc.second = y;
     color = white;
     on_color = yellow_l + blue * 16;
+    this->show();
 }
 
 Button::Button(string Tex, int x, int y, void(*func)()) {
@@ -37,6 +39,7 @@ Button::Button(string Tex, int x, int y, void(*func)()) {
     color = white;
     on_color = yellow_l + blue * 16;
     Func = func;
+    this->show();
 }
 
 Button::Button(string Tex, int x, int y, int xxl) {
@@ -48,6 +51,7 @@ Button::Button(string Tex, int x, int y, int xxl) {
     loc.first = x; loc.second = y;
     color = white;
     on_color = yellow_l + blue * 16;
+    this->show();
 }
 
 void Button::show() {
