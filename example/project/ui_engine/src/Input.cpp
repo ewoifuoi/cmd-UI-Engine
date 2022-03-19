@@ -35,19 +35,9 @@ int Input::GET() {
     goto_xy(start, loc.second);
     set_console_color(in_color);
     show_cursor();
-    int f;
-    char c = getchar();
-    string s = " ";
-    if(c == '\n') f = 1;
-    else {
-        s[0] = c;
-        cin >> input;
-        input = s + input;
-    }
-    
+    cin >> input;
     HideCursor();
     set_console_color(white);
-    if(f) return -1;
     return 0;
 }
 
