@@ -15,6 +15,7 @@
 #include<Button.h>
 #include<listen.h>
 #include<Scene.h>
+#include<Input.h>
 
 #define BACK 1
 
