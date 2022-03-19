@@ -7,6 +7,11 @@ Label::Label(string Tex, int x, int y) {
     text = Tex; loc.first = x; loc.second = y; color = white;
     this->show();
 }
+
+Label::Label(string Tex, int x, int y, int Color) {
+    text = Tex; loc.first = x; loc.second = y; color = Color;
+    this->show();
+}
 void Label::randColorShow(int p) {// 随机颜色 (霓虹灯效果)
     if(loop_cnt % p == 0) {
         color = rand() % 14 + 1;

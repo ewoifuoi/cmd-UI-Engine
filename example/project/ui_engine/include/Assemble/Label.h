@@ -12,6 +12,7 @@ private:
     
 public:
     Label(string Tex, int x, int y);
+    Label(string Tex, int x, int y, int Color);
     void randColorShow(int p);                              // 随机颜色 (霓虹灯效果) 参数为间隔周期
     void show();                                            // 简单输出
     void removeTo(int x, int y);                            // 改变位置并输出

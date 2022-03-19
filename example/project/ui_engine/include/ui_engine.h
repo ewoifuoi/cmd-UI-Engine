@@ -36,7 +36,7 @@ void print(string s);
 // 通用绘制函数                                               
 void powerprint(string word, short x, short y, int color, int val);
 // 绘制边界 
-void make_boundary(int x, int y, int type);                         
+void make_boundary(int a, int b, int x, int y, int type);                         
 
 
 // 内部 API

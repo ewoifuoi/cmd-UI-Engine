@@ -18,6 +18,8 @@ public:
     Button(string Tex, int x, int y);                       // 无 lambda 表达式 的 按钮
     Button(string Tex, int x, int y, void(*func)());        // 自带 lambda 表达式 的按钮
     Button(string Tex, int x, int y, int xxl);              // 返回按钮的回调优化, (使用方法 : xxl 中 填 BACK)
+    Button(string Tex, int x, int y, int c, int oc);
+    Button(string Tex, int x, int y, int c, int oc, void(*func)());
     void setColor(int front, int back);                     // 改变 未被选中颜色, 与 被选中颜色
     int onClick();                                          // 返回是否被选中 (被选中 返回 1)
     void click();                                           // 选中 按钮
