@@ -11,7 +11,8 @@
 // 内部库
 #include<loop.h>
 #include<render.h>
-#include<assemble.h>
+#include<Label.h>
+#include<Button.h>
 #include<listen.h>
 #include<Scene.h>
 
