@@ -21,9 +21,8 @@ Input::Input(string tex, int x, int y, int Color, int in_Color) {
     int s = tex.size();
     start = x + s - 8;
     this->show();
-    if(this->GET() == -1) {
-        error = 1;
-    }
+    this->GET();
+
 }
 
 

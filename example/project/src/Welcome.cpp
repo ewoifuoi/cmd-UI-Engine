@@ -10,7 +10,7 @@ void Welcome() {
     SCENE_WITHOUT_BACK(
         auto title = new Label("贪吃蛇 qwq", 25, 6);
         auto btn1 = new Button("开始游戏", 26, 12, [](){
-            Game();
+            Load();
         });
         auto btn2 = new Button("排行榜", 27, 15, [](){
             Rank();
