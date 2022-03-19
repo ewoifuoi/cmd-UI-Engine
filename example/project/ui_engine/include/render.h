@@ -76,10 +76,8 @@ extern string char_list[20001];
 		cout << "windows failed !";\
     }\
 	vector<Button*> temp;\
-	reload:\
-	temp.clear();\
-    system("CLS");\
 	int pointer = 0;\
+	
 	
 	
 

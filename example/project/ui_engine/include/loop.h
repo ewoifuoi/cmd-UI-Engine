@@ -30,19 +30,17 @@ extern int Key[21];
 #define RIGHT   Key[4]
 
 // 启用键盘监听进程, 在监听循环中通过 Key数组判断对应按键是否被触发
-#define LOOP(TEXT) HANDLE handle2 = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
+#define LOOP(TEXT)HANDLE handle2 = CreateThread(NULL, 0, ThreadListen, NULL,0,  NULL);\
     loop_cnt = 0;\
     while(1){\
         if(back) {\
-            back = 0;\
-            goto end;\
+            CloseHandle(handle2);\
+            break;\
         }\
         loop_cnt++;\
         loop_cnt %= 10000019;\
         TEXT\
     }\
-    end:\
-    CloseHandle(handle2);\
 
 
 #endif
