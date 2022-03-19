@@ -19,26 +19,26 @@ void powerprint(string word, short x, short y, int color, int val) {
     return ;
 }
 
-void make_boundary(int x, int y, int type){// 绘制一个从 (0, 0) 到 (x - 1, y - 1) 的一个边框
+void make_boundary(int a, int b, int x, int y, int type){// 绘制一个从 (0, 0) 到 (x - 1, y - 1) 的一个边框
 
     string c[10][8]={{"□", "□", "□", "□", "□", "□"}, {"╔", "╚", "╝", "╗", "═", "║"}};
 
-    powerprint(c[type][0], 1, 1, white, -1);
-    for(int i = 2; i < x; i++) {
-        powerprint(c[type][4], i, 1, white, -1);
+    powerprint(c[type][0], a, b, white, -1);
+    for(int i = a + 1; i < x; i++) {
+        powerprint(c[type][4], i, b, white, -1);
     }
-    for(int i = 2; i < y; i++) {
-        powerprint(c[type][5], 1, i, white, -1);
+    for(int i = b + 1; i < y; i++) {
+        powerprint(c[type][5], a, i, white, -1);
     }
-    powerprint(c[type][1], 1, y, white, -1);
-    for(int i = 2; i < x; i++) {
+    powerprint(c[type][1], a, y, white, -1);
+    for(int i = a + 1; i < x; i++) {
         powerprint(c[type][4], i, y, white, -1);
     }
     powerprint(c[type][2], x, y, white, -1);
-    for(int i = 2; i < y; i++) {
+    for(int i = b + 1; i < y; i++) {
         powerprint(c[type][5], x, i, white, -1);
     }
-    powerprint(c[type][3], x, 1, white, -1);
+    powerprint(c[type][3], x, b, white, -1);
 
     
     return;

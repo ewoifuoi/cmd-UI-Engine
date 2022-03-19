@@ -8,7 +8,10 @@
 void Welcome();
 void Game();
 void Rank();
+void Load();
+void Confirm();
 
+extern string user_name;
 
 
 #endif

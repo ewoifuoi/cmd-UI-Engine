@@ -22,6 +22,7 @@ aux_source_directory(src SRC)
 add_subdirectory(ui_engine)
 # 使用 ui-engine 引擎 中的 函数 与 宏
 include_directories("ui_engine/include")
+include_directories("ui_engine/include/Assemble")
 # 编译并生成可执行文件 example
 add_executable(example ${project} ${SRC})
 # 将 ui-engine 编译后的链接库 链接到 主程序 中来
