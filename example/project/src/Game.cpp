@@ -4,7 +4,7 @@ using namespace std;
 
 void Game() {
     INIT_NORMAL
-    SCENE_WITHOUT_BACK(
+    SCENE(
         auto btn1 = new Button("剧情模式", 25, 9, purple_l, blue * 16 + yellow_l, [](){
             Error("当前功能未开放 !");
         });
