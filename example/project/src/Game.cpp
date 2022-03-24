@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void Game() {
+void Game() {//git 
     INIT_NORMAL
     SCENE(
         auto btn1 = new Button("剧情模式", 25, 9, purple_l, blue * 16 + yellow_l, [](){
