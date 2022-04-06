@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int Key[21];
+int Key[200];
 int Signal_change = 0;
 int loop_cnt=0;
 int thread_shutDown = 0;
@@ -17,31 +17,31 @@ void kb_get() {
         char in_put = getch();
         if(int(in_put) == 13) {// 回车
             memset(Key, 0 ,sizeof(Key));
-            Key[0] = 1;
+            Key[13] = 1;
             return ;
         }
         if(int(in_put) == 27) {
             memset(Key, 0 ,sizeof(Key));
-            Key[10] = 1;
+            Key[27] = 1;
             return ;
         }
         if(int(in_put) == 72) {//上
         	memset(Key, 0 ,sizeof(Key));
-            Key[1] = 1;
+            Key[72] = 1;
             return ;
         }
         if(int(in_put) == 80) {//下
         	memset(Key, 0 ,sizeof(Key));
-            Key[2] = 1;
+            Key[80] = 1;
             return ;
         }if(int(in_put) == 75) {//左
         	memset(Key, 0 ,sizeof(Key));
-            Key[3] = 1;
+            Key[75] = 1;
             return ;
         }
         if(int(in_put) == 77) {//右
         	memset(Key, 0 ,sizeof(Key));
-            Key[4] = 1;
+            Key[77] = 1;
             return ;
         }
         

@@ -16,7 +16,7 @@ void Error(string text) {
     }
     auto txt = new Label(text, 20, 10, red_l);
     auto btn = new Button("确定", 30, 14, [](){
-        Back();
+        Back(1);
     });
     LOOP(
         LISTEN_BUTTON(btn)
