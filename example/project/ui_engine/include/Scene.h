@@ -25,7 +25,7 @@ while(1) {\
     make_boundary(1, 1, 59,22,LINE);\
     TEXT\
     if(back) {\
-        back = 0;\
+        back--;\
         break;\
     }\
 }\

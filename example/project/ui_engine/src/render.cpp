@@ -45,10 +45,11 @@ void make_boundary(int a, int b, int x, int y, int type){// 绘制一个从 (0, 
 
 }
 
-void Back() {
+void Back(int t) {
     if(back == 0) {
-        back = 1;
+        back = t;
         thread_shutDown = 1;
     }
+    if(back < 0) back = 0;
     return;
 }

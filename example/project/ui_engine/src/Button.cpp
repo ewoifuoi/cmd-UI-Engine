@@ -40,7 +40,7 @@ Button::Button(string Tex, int x, int y, void(*func)()) {
 
 Button::Button(string Tex, int x, int y, int xxl) {
     if(xxl == BACK) {
-        Func = [](){Back();};
+        Func = [](){Back(1);};
         if_back = 1;
     }
     text = Tex;

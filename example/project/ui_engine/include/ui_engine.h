@@ -30,6 +30,9 @@ extern int thread_shutDown;         // (已废弃)
 extern int signal_will_stop;        // 线程终止预告  (返回按钮回调优化)
 
 
+extern int Key[200];                // 全键盘监听, 访问 Key 判断按键是否被按下
+
+
 // 基础 API
 // 测试函数
 void print(string s);
@@ -53,6 +56,6 @@ void HideCursor();
 // 改变终端颜色                                                  
 void set_console_color(unsigned short color_index);
 // 界面回调函数                 
-void Back();                                                        
+void Back(int t);                                                        
 
 #endif
