@@ -12,6 +12,12 @@ Button::Button(string Tex, int x, int y) {
     this->show();
 }
 
+Button::Button(int x, int y) {
+
+    loc.first = x; loc.second = y;
+
+}
+
 Button::Button(string Tex, int x, int y, int c, int oc) {
     text = Tex;
     loc.first = x; loc.second = y;

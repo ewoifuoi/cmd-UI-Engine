@@ -16,27 +16,52 @@ Input::Input(string tex, int x, int y) {
 Input::Input(string tex, int x, int y, int Color, int in_Color) {
     text = tex;
     loc.first = x; loc.second = y;
+    cur_loc = x + tex.size();
     color = Color;
     in_color = in_Color;
     int s = tex.size();
     start = x + s - 8;
     this->show();
-    this->GET();
+    // this->GET();
 
+    btn = new Button(x, y);
+
+}
+
+void Input::setColor(int c, int cc, int ic) {
+    color = c;
+    in_color = ic;
+    clicked_color = cc;
+    return ;
 }
 
 
 void Input::show() {
     powerprint(text, loc.first, loc.second, color, -1);
+    return ;
 }
 
 int Input::GET() {
-    goto_xy(start, loc.second);
-    set_console_color(in_color);
-    show_cursor();
-    cin >> input;
-    HideCursor();
-    set_console_color(white);
+    if(btn->onClick()) {
+        
+        goto_xy(cur_loc, loc.second);
+        if(!freshed) {
+            powerprint(text, loc.first, loc.second, clicked_color, -1);
+            freshed = 1;
+        }
+        set_console_color(in_color);
+        // cin >> input;
+        this->getInput();
+        set_console_color(white);
+    }
+    else {
+        if(!freshed) {
+            this->show();
+            freshed = 1;
+        }
+        freshed = 0;
+        HideCursor();
+    }
     return 0;
 }
 

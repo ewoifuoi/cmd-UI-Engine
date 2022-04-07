@@ -4,7 +4,7 @@
 #ifndef BUTTON
 #define BUTTON
 
-class Button {              // 按钮组件
+class Button {// 按钮 (组件)
 private:
     string text;                                            //文本
     pair<int, int> loc;                                     // 坐标
@@ -20,6 +20,7 @@ public:
     Button(string Tex, int x, int y, int xxl);              // 返回按钮的回调优化, (使用方法 : xxl 中 填 BACK)
     Button(string Tex, int x, int y, int c, int oc);
     Button(string Tex, int x, int y, int c, int oc, void(*func)());
+    Button(int x, int y);
     void setColor(int front, int back);                     // 改变 未被选中颜色, 与 被选中颜色
     int onClick();                                          // 返回是否被选中 (被选中 返回 1)
     void click();                                           // 选中 按钮

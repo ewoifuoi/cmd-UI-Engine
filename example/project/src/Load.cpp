@@ -15,7 +15,7 @@ void Load() {
         auto btn2 = new Button("取消", 30, 13, yellow, blue * 16 + white_b, [](){
             Back(1);
         });
-        // auto input = new Input("输入用户名开始游戏 : ", 7, 9, yellow_l, aqua_l);
+        auto input = new Input("输入用户名开始游戏 : ", 7, 9, yellow_l, aqua_l);
         // user_name = input->getInput();
        
         // if(input->if_error() == 1) {
@@ -23,7 +23,8 @@ void Load() {
         //     continue;
         // }
         LOOP(
-            LISTEN_BUTTON(btn1, btn2)
+            LISTEN_BUTTON(btn1, btn2, input->btn)
+            input->GET();
         )
     )
     return;

@@ -4,7 +4,8 @@
 
 #define LABLE
 
-class Label {               // 标签组件                     (虽然可能没啥用 2333)
+class Label {//  标签 (组件)                     
+//(虽然可能没啥用 2333)
 private:
     string text;
     pair<int, int> loc;
