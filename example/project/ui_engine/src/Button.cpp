@@ -9,6 +9,7 @@ Button::Button(string Tex, int x, int y) {
     loc.first = x; loc.second = y;
     color = white;
     on_color = yellow_l + blue * 16;
+    Func = NULL;
     this->show();
 }
 

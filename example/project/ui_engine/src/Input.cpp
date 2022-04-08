@@ -52,22 +52,36 @@ int Input::GET() {
         
         // cin >> input;
         // input = Read(); //  用全键盘监听的方式 实现 非阻塞 读入
-        if(ENTER) {// 回车时延优化
+        // if(ENTER) {// 回车时延优化
+        //     memset(Key, 0, sizeof(Key));
+        //     in_put = '\\';
+        //     // return 0;
+        // }
+        if(int(in_put) == 8) {
+            // Error("!");
             memset(Key, 0, sizeof(Key));
+            if(input.size() != 0)input.pop_back();
             in_put = '\\';
-            return 0;
+            goto_xy(loc.first + text.size() - 8, loc.second);
+            set_console_color(in_color);
+            for(int i = 0; i <= input.size(); i++) cout << " ";
+            // cout << "        ";
+            goto_xy(loc.first + text.size() - 8, loc.second);
+            cout << input;
+            set_console_color(white);
         }
-        if(in_put != '\\') {
+        else if(in_put != '\\') {
             stringstream temp;
 
             temp << in_put;
             
-            goto_xy(loc.first + text.size() - 10, loc.second);
+            goto_xy(loc.first + text.size() - 8, loc.second);
             set_console_color(in_color);
-            cout << input;
+            
             // memset(Key, 0, sizeof(Key));
             in_put = '\\';
-            input = temp.str();
+            input += temp.str();
+            cout << input;
             set_console_color(white);
 
         }

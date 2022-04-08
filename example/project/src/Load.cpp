@@ -30,13 +30,8 @@ void Load() {
         LOOP(
             LISTEN_BUTTON(btn1, btn2, input->btn)
             input->GET();
-            if(ENTER) {
-                memset(Key, 0, sizeof(Key));
-                if(input->if_error() == 1) {
-                    Error("错误 : 用户名不能为空 !");
-                    continue;
-                }
-            }
+            
+            
             
         )
     )

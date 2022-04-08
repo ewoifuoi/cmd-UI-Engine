@@ -31,8 +31,7 @@ if(!list.empty()) {\
     }\
     if(ENTER) {\
         memset(Key, 0, sizeof(Key));\
-        if(list[pointer]->Func != NULL) {list[pointer]->Func();}\
-        break;\
+        if(list[pointer]->Func != NULL) {list[pointer]->Func();break;}\
     }\
 }\
 
