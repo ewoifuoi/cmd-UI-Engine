@@ -51,7 +51,10 @@ int Input::GET() {
         }
         set_console_color(in_color);
         // cin >> input;
-        this->getInput();
+        input = Read(); //  用全键盘监听的方式 实现 非阻塞 读入
+        if(input == "") {
+            error = 1;
+        }
         set_console_color(white);
     }
     else {
@@ -65,11 +68,14 @@ int Input::GET() {
     return 0;
 }
 
+
+
 string Input::getInput() {
     return input;
 }
 
 int Input::if_error() {
+    error = 0;
     return error;
 }
 

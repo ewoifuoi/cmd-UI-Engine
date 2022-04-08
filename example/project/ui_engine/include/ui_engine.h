@@ -56,6 +56,9 @@ void HideCursor();
 // 改变终端颜色                                                  
 void set_console_color(unsigned short color_index);
 // 界面回调函数                 
-void Back(int t);                                                        
+void Back(int t);
+// 全键盘监听的方式 实现 非阻塞 读入
+string Read();
+
 
 #endif

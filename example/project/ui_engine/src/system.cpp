@@ -36,3 +36,7 @@ void HideCursor()
 	SetConsoleCursorInfo(handle, &cursor);
     return ;
 }
+
+string Read() {
+    return "";
+}

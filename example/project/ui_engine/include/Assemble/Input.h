@@ -29,8 +29,7 @@ public:
     int GET();                                      // Input 组件 在循环中调用的参数, 以按钮的形式, 当按钮被选中时, 键盘监听 定向到 输入
     string getInput();                              // 查询输入内容
     void show();                                    // 简单输出提示信息
-    int if_error();
-    void Read();                                // 用全键盘监听的方式 实现 非阻塞 读入
+    int if_error();                
 
 };
 
