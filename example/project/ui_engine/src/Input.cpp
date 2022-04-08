@@ -59,7 +59,7 @@ int Input::GET() {
         }
         if(in_put != '\\') {
             stringstream temp;
-            temp << "<inited>";
+
             temp << in_put;
             
             goto_xy(loc.first + text.size() - 10, loc.second);

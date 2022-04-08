@@ -14,6 +14,10 @@ void Load() {
             // extern string user_name;
             // extern Input* input;
             user_name = input->getInput();
+            if(user_name == "") {
+                Error("用户名不能为空 ! ");
+                back = 1;
+            }
             Confirm();
         });
         auto btn2 = new Button("取消", 30, 13, yellow, blue * 16 + white_b, [&](){
