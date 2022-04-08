@@ -10,39 +10,45 @@ int Signal_change = 0;
 int loop_cnt=0;
 int thread_shutDown = 0;
 int signal_will_stop = 0;
+char in_put = '\\';
 
 void kb_get() {
     if(_kbhit()) {
         Signal_change = 1;
-        char in_put = getch();
-        if(int(in_put) == 13) {// 回车
+        char temp = getch();
+        in_put = '\\';
+        if(int(temp) == 13) {// 回车
             memset(Key, 0 ,sizeof(Key));
             Key[13] = 1;
             return ;
         }
-        if(int(in_put) == 27) {
+        if(int(temp) == 27) {
             memset(Key, 0 ,sizeof(Key));
             Key[27] = 1;
             return ;
         }
-        if(int(in_put) == 72) {//上
+        if(int(temp) == 72) {//上
         	memset(Key, 0 ,sizeof(Key));
             Key[72] = 1;
             return ;
         }
-        if(int(in_put) == 80) {//下
+        if(int(temp) == 80) {//下
         	memset(Key, 0 ,sizeof(Key));
             Key[80] = 1;
             return ;
-        }if(int(in_put) == 75) {//左
+        }if(int(temp) == 75) {//左
         	memset(Key, 0 ,sizeof(Key));
             Key[75] = 1;
             return ;
         }
-        if(int(in_put) == 77) {//右
+        if(int(temp) == 77) {//右
         	memset(Key, 0 ,sizeof(Key));
             Key[77] = 1;
             return ;
+        }
+        if(!UP && !DOWN && !RIGHT && !LEFT && !ENTER) {
+            in_put = temp;
+            return;
         }
         
     }

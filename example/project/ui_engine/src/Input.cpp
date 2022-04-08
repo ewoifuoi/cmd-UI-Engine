@@ -16,7 +16,7 @@ Input::Input(string tex, int x, int y) {
 Input::Input(string tex, int x, int y, int Color, int in_Color) {
     text = tex;
     loc.first = x; loc.second = y;
-    cur_loc = x + tex.size();
+    cur_loc = x + tex.size() - 5;
     color = Color;
     in_color = in_Color;
     int s = tex.size();
@@ -49,13 +49,38 @@ int Input::GET() {
             powerprint(text, loc.first, loc.second, clicked_color, -1);
             freshed = 1;
         }
-        set_console_color(in_color);
+        
         // cin >> input;
-        input = Read(); //  用全键盘监听的方式 实现 非阻塞 读入
+        // input = Read(); //  用全键盘监听的方式 实现 非阻塞 读入
+        if(ENTER) {// 回车时延优化
+            memset(Key, 0, sizeof(Key));
+            in_put = '\\';
+            return 0;
+        }
+        if(in_put != '\\') {
+            stringstream temp;
+            temp << "<inited>";
+            temp << in_put;
+            
+            goto_xy(loc.first + text.size() - 10, loc.second);
+            set_console_color(in_color);
+            cout << input;
+            // memset(Key, 0, sizeof(Key));
+            in_put = '\\';
+            input = temp.str();
+            set_console_color(white);
+
+        }
+        else {
+            // memset(Key, 0, sizeof(Key));
+            in_put = '\\';
+        }
+        
         if(input == "") {
             error = 1;
         }
         set_console_color(white);
+        return 0;
     }
     else {
         if(!freshed) {

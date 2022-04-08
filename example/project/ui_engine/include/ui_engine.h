@@ -29,6 +29,8 @@ extern int back;                    // 是否触发场景返回
 extern int thread_shutDown;         // (已废弃)
 extern int signal_will_stop;        // 线程终止预告  (返回按钮回调优化)
 
+extern char in_put;          // 当前输入字符
+
 
 extern int Key[200];                // 全键盘监听, 访问 Key 判断按键是否被按下
 
