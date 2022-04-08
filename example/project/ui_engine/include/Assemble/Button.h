@@ -16,7 +16,7 @@ private:
     
 public:
     Button(string Tex, int x, int y);                       // 无 lambda 表达式 的 按钮
-    Button(string Tex, int x, int y, void(*func)());        // 自带 lambda 表达式 的按钮
+    Button(string Tex, int x, int y, [&](*func)());        // 自带 lambda 表达式 的按钮
     Button(string Tex, int x, int y, int xxl);              // 返回按钮的回调优化, (使用方法 : xxl 中 填 BACK)
     Button(string Tex, int x, int y, int c, int oc);
     Button(string Tex, int x, int y, int c, int oc, void(*func)());
