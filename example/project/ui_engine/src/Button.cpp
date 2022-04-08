@@ -26,7 +26,7 @@ Button::Button(string Tex, int x, int y, int c, int oc) {
     this->show();
 }
 
-Button::Button(string Tex, int x, int y, int c, int oc, void(*func)()) {
+Button::Button(string Tex, int x, int y, int c, int oc, function<void()> func) {
     text = Tex;
     loc.first = x; loc.second = y;
     color = c;
@@ -35,7 +35,7 @@ Button::Button(string Tex, int x, int y, int c, int oc, void(*func)()) {
     this->show();
 }
 
-Button::Button(string Tex, int x, int y, void(*func)()) {
+Button::Button(string Tex, int x, int y, function<void()> func) {
     text = Tex;
     loc.first = x; loc.second = y;
     color = white;
