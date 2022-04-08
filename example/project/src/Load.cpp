@@ -10,10 +10,10 @@ void Load() {
     SCENE_WITHOUT_BACK(
         auto input = new Input("输入用户名开始游戏 : ", 7, 9, yellow_l, aqua_l);
 
-        Button* btn1 = new Button("确定", 24, 13, yellow, blue * 16 + white_b, [](){
-            extern string user_name;
+        Button* btn1 = new Button("确定", 24, 13, yellow, blue * 16 + white_b, [&](){
+            // extern string user_name;
             // extern Input* input;
-            // user_name = input->getInput();
+            user_name = input->getInput();
             Confirm();
         });
         auto btn2 = new Button("取消", 30, 13, yellow, blue * 16 + white_b, [](){
